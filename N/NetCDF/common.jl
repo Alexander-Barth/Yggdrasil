@@ -27,7 +27,7 @@ function configure(version_offset, min_julia_version)
 cd $WORKSPACE/srcdir/netcdf-c-*
 
 export CPPFLAGS="-I${includedir}"
-export CFLAGS="-std=c99"
+export CFLAGS="-std=c99 -g"
 export LDFLAGS="-L${libdir}"
 export LDFLAGS_MAKE="${LDFLAGS}"
 CONFIGURE_OPTIONS=""
@@ -97,7 +97,7 @@ nc-config --all
 
     # Dependencies that must be installed before this package can be built
     dependencies = [
-        Dependency(PackageSpec(name="HDF5_jll"), compat="1.12.1"),
+        Dependency(PackageSpec(name="HDF5_jll"), compat="1.12.0"),
         Dependency("Zlib_jll"),
     ]
 
